@@ -9,7 +9,7 @@ import {
   Building2, 
   TrendingUp, 
   Users, 
-  Linkedin, 
+  Linkedin,
   Mail, 
   Phone, 
   Instagram, 
