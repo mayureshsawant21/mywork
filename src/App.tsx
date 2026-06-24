@@ -89,9 +89,10 @@ export default function App() {
     
     // Update path securely during client tab mutations
     if (tabId === "leads") {
-      window.history.pushState({}, "", "/leads");
+      window.location.hash = "leads";
     } else {
-      window.history.pushState({}, "", "/");
+      // Clear hash safely without scrolling, preserving the full subpath
+      window.history.pushState("", document.title, window.location.pathname + window.location.search);
     }
     
     // Scroll smoothly to top of the tabs section
