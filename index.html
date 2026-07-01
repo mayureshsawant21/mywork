@@ -1,13 +1,1225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mayuresh Sawant | Top Digital Marketing Manager in Mumbai</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayuresh Sawant | Digital Marketing Manager</title>
+  <meta name="description" content="Results-driven Digital Marketing Manager with 6+ years in Performance Marketing, Lead Generation, and 360° Digital Campaigns across Real Estate, Healthcare, and International Markets." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #4F46E5;
+      --primary-dark: #3730A3;
+      --accent: #7C3AED;
+      --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      --gradient-soft: linear-gradient(135deg, #EEF2FF 0%, #F5F3FF 100%);
+      --text-dark: #0f172a;
+      --text-mid: #334155;
+      --text-muted: #64748b;
+      --bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.08);
+      --shadow-lg: 0 10px 40px rgba(79,70,229,.12);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5 { font-family: 'Poppins', sans-serif; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: 1.1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--text-mid); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--gradient);
+      color: #fff !important;
+      padding: .45rem 1.1rem;
+      border-radius: 8px;
+    }
+    .nav-cta:hover { opacity: .9; color: #fff !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 80px 5% 60px;
+      background: linear-gradient(160deg, #ffffff 0%, #EEF2FF 50%, #F5F3FF 100%);
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(79,70,229,.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    #hero::after {
+      content: '';
+      position: absolute; bottom: -150px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(124,58,237,.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-content { max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #EEF2FF; border: 1px solid #C7D2FE;
+      color: var(--primary); border-radius: 50px;
+      padding: .35rem 1rem; font-size: .8rem; font-weight: 600;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown .6s ease both;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800; line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      animation: fadeInUp .6s .1s ease both;
+    }
+    .hero-title span {
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.1rem; color: var(--text-mid);
+      max-width: 620px; margin-bottom: 2rem;
+      animation: fadeInUp .6s .2s ease both;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeInUp .6s .3s ease both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 1.75rem; border-radius: 10px;
+      font-weight: 600; font-size: .95rem;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all .25s;
+    }
+    .btn-primary {
+      background: var(--gradient); color: #fff;
+      box-shadow: 0 4px 20px rgba(79,70,229,.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(79,70,229,.4); }
+    .btn-outline {
+      background: #fff; color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--gradient); color: #fff; border-color: transparent; transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
+      margin-top: 3rem;
+      animation: fadeInUp .6s .4s ease both;
+    }
+    .stat { display: flex; flex-direction: column; }
+    .stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: .8rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* ── SECTIONS ── */
+    section { padding: 90px 5%; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      background: var(--gradient-soft); border: 1px solid #C7D2FE;
+      color: var(--primary); padding: .3rem .9rem;
+      border-radius: 50px; font-size: .78rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; color: var(--text-dark);
+      margin-bottom: .5rem;
+    }
+    .section-desc { color: var(--text-muted); font-size: 1rem; max-width: 560px; margin-bottom: 3rem; }
+    .divider { width: 60px; height: 4px; background: var(--gradient); border-radius: 4px; margin: .75rem 0 2.5rem; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg-soft); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--text-mid); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.5rem; }
+    .about-highlight {
+      display: flex; align-items: flex-start; gap: .6rem;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: .85rem 1rem;
+    }
+    .about-highlight i { color: var(--primary); margin-top: .2rem; font-size: .9rem; flex-shrink: 0; }
+    .about-highlight span { font-size: .85rem; color: var(--text-mid); font-weight: 500; line-height: 1.4; }
+    .info-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+    .info-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-dark); }
+    .info-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .9rem; }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-icon {
+      width: 36px; height: 36px;
+      background: var(--gradient-soft); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary); font-size: .85rem; flex-shrink: 0;
+    }
+    .info-row a { color: var(--text-mid); text-decoration: none; font-size: .9rem; }
+    .info-row a:hover { color: var(--primary); }
+    .info-row span { color: var(--text-mid); font-size: .9rem; }
+    .avail-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: #ECFDF5; border: 1px solid #6EE7B7; color: #065F46;
+      border-radius: 50px; padding: .3rem .85rem;
+      font-size: .8rem; font-weight: 600; margin-top: 1rem;
+    }
+    .avail-badge .dot { width: 7px; height: 7px; background: #10B981; border-radius: 50%; animation: pulse 1.5s infinite; }
+
+    /* ── HIGHLIGHTS ── */
+    #highlights { background: #fff; }
+    .highlights-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+    .highlight-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s;
+    }
+    .highlight-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: #C7D2FE; }
+    .highlight-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--gradient); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.1rem;
+    }
+    .highlight-text h4 { font-size: .95rem; font-weight: 600; margin-bottom: .25rem; color: var(--text-dark); }
+    .highlight-text p { font-size: .83rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg-soft); }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -2.6rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gradient);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px #C7D2FE;
+      top: .8rem;
+    }
+    .exp-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s;
+    }
+    .exp-card:hover { box-shadow: var(--shadow-lg); border-color: #C7D2FE; }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+    .exp-role { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); }
+    .exp-company { font-size: .875rem; color: var(--primary); font-weight: 600; margin-top: .15rem; }
+    .exp-period {
+      background: var(--gradient-soft); border: 1px solid #C7D2FE;
+      color: var(--primary); padding: .25rem .75rem;
+      border-radius: 50px; font-size: .78rem; font-weight: 600;
+      white-space: nowrap;
+    }
+    .exp-bullets { list-style: none; margin-top: .75rem; }
+    .exp-bullets li {
+      display: flex; align-items: flex-start; gap: .6rem;
+      font-size: .875rem; color: var(--text-mid);
+      margin-bottom: .5rem; line-height: 1.55;
+    }
+    .exp-bullets li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gradient); flex-shrink: 0; margin-top: .45rem;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: #fff; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .skill-category-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s;
+    }
+    .skill-category-card:hover { box-shadow: var(--shadow-lg); border-color: #C7D2FE; transform: translateY(-2px); }
+    .skill-cat-header { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.25rem; }
+    .skill-cat-icon {
+      width: 40px; height: 40px;
+      background: var(--gradient); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1rem; flex-shrink: 0;
+    }
+    .skill-cat-name { font-size: .95rem; font-weight: 700; color: var(--text-dark); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .skill-tag {
+      background: var(--gradient-soft); border: 1px solid #C7D2FE;
+      color: var(--primary); border-radius: 50px;
+      padding: .3rem .8rem; font-size: .78rem; font-weight: 500;
+    }
+
+    /* ── CASE STUDIES ── */
+    #case-studies { background: var(--bg-soft); }
+    .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+    .cs-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all .3s;
+    }
+    .cs-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .cs-img { height: 180px; overflow: hidden; position: relative; }
+    .cs-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .cs-card:hover .cs-img img { transform: scale(1.05); }
+    .cs-category {
+      position: absolute; top: .75rem; right: .75rem;
+      background: var(--gradient); color: #fff;
+      padding: .25rem .7rem; border-radius: 50px;
+      font-size: .72rem; font-weight: 600;
+    }
+    .cs-body { padding: 1.5rem; }
+    .cs-client { font-size: .8rem; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .3rem; }
+    .cs-title { font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: .6rem; line-height: 1.4; }
+    .cs-desc { font-size: .845rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+    .cs-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+    .cs-metric { background: var(--bg-soft); border-radius: 8px; padding: .6rem .75rem; }
+    .cs-metric-val { font-size: .9rem; font-weight: 700; color: var(--text-dark); font-family: 'Poppins', sans-serif; }
+    .cs-metric-key { font-size: .72rem; color: var(--text-muted); font-weight: 500; }
+
+    /* ── PERFORMANCE CHART ── */
+    #performance { background: #fff; }
+    .chart-wrapper {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ── ACHIEVEMENTS ── */
+    #achievements { background: var(--bg-soft); }
+    .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .ach-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+    .ach-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: var(--gradient); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.4rem;
+    }
+    .ach-body h4 { font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: .2rem; }
+    .ach-body .ach-sub { font-size: .8rem; color: var(--primary); font-weight: 600; margin-bottom: .5rem; }
+    .ach-body p { font-size: .875rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── EDUCATION ── */
+    #education { background: #fff; }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+    .edu-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s;
+    }
+    .edu-card:hover { box-shadow: var(--shadow-lg); border-color: #C7D2FE; transform: translateY(-2px); }
+    .edu-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--gradient); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.1rem;
+    }
+    .edu-body h4 { font-size: .95rem; font-weight: 700; color: var(--text-dark); margin-bottom: .2rem; }
+    .edu-body .edu-inst { font-size: .82rem; color: var(--primary); font-weight: 600; margin-bottom: .2rem; }
+    .edu-body .edu-year { font-size: .78rem; color: var(--text-muted); }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg-soft); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .project-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 1.1rem 1.25rem;
+      box-shadow: var(--shadow-sm); transition: all .25s;
+    }
+    .project-card:hover { box-shadow: var(--shadow-lg); border-color: #C7D2FE; transform: translateY(-2px); }
+    .project-card .client-tag { font-size: .72rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; }
+    .project-card h4 { font-size: .875rem; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--gradient); padding: 90px 5%; }
+    #contact .container { text-align: center; }
+    #contact .section-label { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4); color: #fff; }
+    #contact .section-title { color: #fff; }
+    #contact .section-desc { color: rgba(255,255,255,.85); margin: 0 auto 2.5rem; }
+    .contact-cards { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
+    .contact-card {
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
+      border-radius: var(--radius); padding: 1.25rem 1.75rem;
+      display: flex; align-items: center; gap: .75rem;
+      color: #fff; text-decoration: none; backdrop-filter: blur(8px);
+      transition: all .25s;
+    }
+    .contact-card:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
+    .contact-card i { font-size: 1.1rem; }
+    .contact-card span { font-size: .9rem; font-weight: 500; }
+    #contact .btn-outline { border-color: #fff; color: #fff; }
+    #contact .btn-outline:hover { background: #fff; color: var(--primary); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark); color: rgba(255,255,255,.6);
+      text-align: center; padding: 1.75rem 5%;
+      font-size: .85rem;
+    }
+    footer a { color: rgba(255,255,255,.8); text-decoration: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.3); opacity: .7; }
+    }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #fff; padding: 1rem 5%; border-bottom: 1px solid var(--border); gap: .75rem; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .ach-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .cs-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 5%; }
+      #hero { padding: 80px 5% 50px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Mayuresh Sawant</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#case-studies">Case Studies</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fa-solid fa-circle-check"></i>
+      Open to Immediate Joining
+    </div>
+    <h1 class="hero-title">
+      Digital Marketing Manager<br /><span>&amp; AI Automation Expert</span>
+    </h1>
+    <p class="hero-sub">
+      6+ years driving performance across Real Estate, Healthcare &amp; International Markets.
+      Specialist in Google Ads, Meta Ads, 360° Campaigns, and AI-powered growth strategies.
+    </p>
+    <div class="hero-actions">
+      <a href="#case-studies" class="btn btn-primary">
+        <i class="fa-solid fa-chart-line"></i> View Case Studies
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        <i class="fa-solid fa-paper-plane"></i> Get in Touch
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">6+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">&#8377;50L+</span>
+        <span class="stat-label">Monthly Budget Managed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">70%</span>
+        <span class="stat-label">ROI Increase Achieved</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">50K+</span>
+        <span class="stat-label">Leads Generated</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Results-Driven Digital Marketer</h2>
+        <div class="divider"></div>
+        <p>
+          Results-driven <strong>Digital Marketing Manager</strong> with <strong>6+ years of experience</strong>
+          in Performance Marketing, Lead Generation, and 360&#176; Digital Campaigns across Real Estate,
+          Healthcare, and International Markets.
+        </p>
+        <p>
+          Specialized in <strong>Google Ads, Meta Ads, Social Media Marketing, Email Marketing, and Analytics</strong>.
+          Proven track record of managing high-budget campaigns, optimizing ROI, and driving business growth
+          through data-driven strategies, AI-powered automation, and cross-functional team leadership.
+        </p>
+        <div class="about-highlights">
+          <div class="about-highlight"><i class="fa-solid fa-location-dot"></i><span>Mumbai &amp; Willing to Relocate</span></div>
+          <div class="about-highlight"><i class="fa-solid fa-briefcase"></i><span>Immediate Joining Available</span></div>
+          <div class="about-highlight"><i class="fa-solid fa-globe"></i><span>International Campaigns (UAE, USA, Singapore)</span></div>
+          <div class="about-highlight"><i class="fa-solid fa-robot"></i><span>AI Automation &amp; AI Website Building</span></div>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay:.15s">
+        <div class="info-card">
+          <h3>Contact Information</h3>
+          <div class="info-row">
+            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+            <a href="tel:+919869078800">+91 9869078800</a>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <a href="mailto:sawantmayuresh3@gmail.com">sawantmayuresh3@gmail.com</a>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i class="fa-brands fa-linkedin"></i></div>
+            <a href="https://linkedin.com/in/mayureshsawant21/" target="_blank" rel="noopener">linkedin.com/in/mayureshsawant21</a>
+          </div>
+          <div class="info-row">
+            <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+            <a href="https://mayureshsawant21.github.io/mywork/" target="_blank" rel="noopener">mayureshsawant21.github.io/mywork</a>
+          </div>
+          <div class="avail-badge">
+            <span class="dot"></span> Available for Immediate Joining
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY HIGHLIGHTS -->
+<section id="highlights">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Key Highlights</div>
+      <h2 class="section-title">What I Bring to the Table</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card fade-in">
+        <div class="highlight-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+        <div class="highlight-text">
+          <h4>&#8377;50L+ Monthly Ad Budget</h4>
+          <p>Managed large-scale ad budgets across Real Estate and Healthcare with consistent ROI.</p>
+        </div>
+      </div>
+      <div class="highlight-card fade-in" style="transition-delay:.05s">
+        <div class="highlight-icon"><i class="fa-solid fa-building"></i></div>
+        <div class="highlight-text">
+          <h4>Top Real Estate Brands</h4>
+          <p>Delivered campaigns for Godrej, Rustomjee, Hiranandani, Adani, Brigade, Emaar, Dr. Batra's &amp; more.</p>
+        </div>
+      </div>
+      <div class="highlight-card fade-in" style="transition-delay:.1s">
+        <div class="highlight-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+        <div class="highlight-text">
+          <h4>360&#176; Digital Campaigns</h4>
+          <p>End-to-end SMM, SEM, Email, WhatsApp, SMS strategies with measurable multi-channel results.</p>
+        </div>
+      </div>
+      <div class="highlight-card fade-in" style="transition-delay:.15s">
+        <div class="highlight-icon"><i class="fa-solid fa-gem"></i></div>
+        <div class="highlight-text">
+          <h4>Luxury Real Estate Expertise</h4>
+          <p>Scaled property value from 20 Cr. to 120 Cr. through targeted digital marketing campaigns.</p>
+        </div>
+      </div>
+      <div class="highlight-card fade-in" style="transition-delay:.2s">
+        <div class="highlight-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="highlight-text">
+          <h4>Landing Pages &amp; Websites</h4>
+          <p>Built high-converting landing pages and full websites independently using modern tools.</p>
+        </div>
+      </div>
+      <div class="highlight-card fade-in" style="transition-delay:.25s">
+        <div class="highlight-icon"><i class="fa-solid fa-plane"></i></div>
+        <div class="highlight-text">
+          <h4>International Reach</h4>
+          <p>Led campaigns &amp; attended global events in UAE, Singapore, USA, Bahrain, Hong Kong &amp; more.</p>
+        </div>
+      </div>
+      <div class="highlight-card fade-in" style="transition-delay:.3s">
+        <div class="highlight-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="highlight-text">
+          <h4>AI Reporting &amp; Analytics</h4>
+          <p>AI-powered reporting, analytics dashboards and website building — 30% efficiency improvement.</p>
+        </div>
+      </div>
+      <div class="highlight-card fade-in" style="transition-delay:.35s">
+        <div class="highlight-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <div class="highlight-text">
+          <h4>Multi-Platform Ads Expert</h4>
+          <p>Google &amp; Meta Ads, Programmatic, Portal Ads, Snapchat Ads, Amazon Ads — full-stack paid media.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Career Journey</div>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Digital Marketing Manager</div>
+              <div class="exp-company">Paradigm Realty</div>
+            </div>
+            <div class="exp-period">Jun 2025 &ndash; Present</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Orchestrated 360&#176; digital marketing strategies across all channels.</li>
+            <li>Spearheaded luxury real estate marketing campaigns, scaling property value from 20 Cr. to 120 Cr.</li>
+            <li>Managed SEO, SEM, Social Media, SMS, RCS, and Email marketing &mdash; 20% increase in website traffic and 30% uplift in conversions over 8 months.</li>
+            <li>Managed Google Ads, Meta Ads, Branding, Portal Ads, and Programmatic Ads &mdash; 20% increase in qualified leads and 5% reduction in CPA over 10 months.</li>
+            <li>Increased social media engagement by 50% and generated new qualified leads within 8 months.</li>
+            <li>Leveraged AI-driven analysis to increase ROI by 70% and boost conversions by 50% within 8 months.</li>
+            <li>Spearheaded AI Automations for reporting, content generation, and analytics &mdash; 30% efficiency gain.</li>
+            <li>Developed landing pages &amp; websites, built interactive chatbot; handled PR for Managing Director.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Manager &ndash; Digital &amp; Marketing</div>
+              <div class="exp-company">NRI ONE &ndash; International Events</div>
+            </div>
+            <div class="exp-period">Jan 2024 &ndash; Mar 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Ran paid campaigns across global markets: USA, UAE, Singapore, Bahrain, Hong Kong and more.</li>
+            <li>Managed Google Ads, Meta Ads, WhatsApp &amp; Email Marketing for international audiences.</li>
+            <li>Led international collaborations, agency coordination, on-ground activities &mdash; 70% increase in event footfalls.</li>
+            <li>Directed social media strategy, client handling, and reporting.</li>
+            <li>Conducted international visits for stakeholder meetings and live event management.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Sr. Executive &ndash; Performance Marketing</div>
+              <div class="exp-company">Realatte &ndash; Digital Marketing Agency</div>
+            </div>
+            <div class="exp-period">Mar 2022 &ndash; Dec 2023</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Handled digital campaigns for Shapoorji Pallonji, Dr. Batra's, Rustomjee, Brigade, Emaar &amp; more.</li>
+            <li>Planned and optimized campaigns, managed client relations, created media plans.</li>
+            <li>Managed reporting, client meetings, creative and website support.</li>
+            <li>Ran Google Ads, Meta Ads, Portal Ads, Programmatic Ads, and Branding Ads.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Digital Marketing Executive</div>
+              <div class="exp-company">WPMS</div>
+            </div>
+            <div class="exp-period">Oct 2020 &ndash; Feb 2022</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Performance marketing &mdash; lead generation and awareness campaigns.</li>
+            <li>Google Ads, Meta Ads, Portal Ads, Website Development.</li>
+            <li>Social Media &amp; Brand Management &mdash; Team Handling.</li>
+            <li>Creative management &amp; Landing page creation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Digital Marketing Executive</div>
+              <div class="exp-company">Credence Capital</div>
+            </div>
+            <div class="exp-period">Jun 2020 &ndash; Sep 2020</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Managed Google &amp; Meta Ads for lead generation and brand awareness.</li>
+            <li>Built websites &amp; landing pages; designed creatives using Photoshop.</li>
+            <li>Executed bulk email, WhatsApp &amp; SMS marketing pipelines.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">BD &amp; Client Servicing Executive</div>
+              <div class="exp-company">Next Labs &ndash; DM Agency</div>
+            </div>
+            <div class="exp-period">Jun 2019 &ndash; Dec 2019</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Improved app rankings via ASO on Google Play &amp; App Store.</li>
+            <li>Generated leads via LinkedIn &amp; client meetings leading to closures.</li>
+            <li>Tracked &amp; reported app performance metrics on daily, weekly &amp; monthly basis.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category-card fade-in">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <div class="skill-cat-name">Paid Advertising &amp; Platforms</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Ads (SEM/GDN/PMax)</span>
+          <span class="skill-tag">Meta Ads (FB/Instagram)</span>
+          <span class="skill-tag">Programmatic Ads</span>
+          <span class="skill-tag">Portal Ads (99acres, Magicbricks)</span>
+          <span class="skill-tag">Snapchat Ads</span>
+          <span class="skill-tag">Amazon Ads</span>
+          <span class="skill-tag">LinkedIn Campaign Manager</span>
+          <span class="skill-tag">Taboola &amp; Yahoo Native</span>
+        </div>
+      </div>
+      <div class="skill-category-card fade-in" style="transition-delay:.05s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fa-solid fa-robot"></i></div>
+          <div class="skill-cat-name">AI &amp; Automation Tools</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Claude AI Integration</span>
+          <span class="skill-tag">ChatGPT / GPT-4</span>
+          <span class="skill-tag">Midjourney</span>
+          <span class="skill-tag">Make.com &amp; Zapier</span>
+          <span class="skill-tag">HeyGen &amp; AI Avatars</span>
+          <span class="skill-tag">Runway ML</span>
+          <span class="skill-tag">AI WhatsApp Bot</span>
+          <span class="skill-tag">Cursor AI</span>
+          <span class="skill-tag">AI Studio</span>
+        </div>
+      </div>
+      <div class="skill-category-card fade-in" style="transition-delay:.1s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fa-solid fa-chart-bar"></i></div>
+          <div class="skill-cat-name">Analytics &amp; Tracking</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Analytics 4 (GA4)</span>
+          <span class="skill-tag">Google Tag Manager</span>
+          <span class="skill-tag">Search Console</span>
+          <span class="skill-tag">Salesforce CRM</span>
+          <span class="skill-tag">SEMrush</span>
+          <span class="skill-tag">Google Trends</span>
+          <span class="skill-tag">Windsor AI</span>
+          <span class="skill-tag">Buffer &amp; Mailchimp</span>
+        </div>
+      </div>
+      <div class="skill-category-card fade-in" style="transition-delay:.15s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fa-solid fa-palette"></i></div>
+          <div class="skill-cat-name">Design &amp; Development</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Landing Page Development</span>
+          <span class="skill-tag">Canva Pro</span>
+          <span class="skill-tag">Adobe Photoshop</span>
+          <span class="skill-tag">Video Editing</span>
+          <span class="skill-tag">Chatbot Development</span>
+          <span class="skill-tag">WhatsApp Business API</span>
+        </div>
+      </div>
+      <div class="skill-category-card fade-in" style="transition-delay:.2s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="skill-cat-name">Digital Marketing Channels</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">SEO &amp; SEM</span>
+          <span class="skill-tag">Social Media Marketing</span>
+          <span class="skill-tag">Email Marketing</span>
+          <span class="skill-tag">WhatsApp Marketing</span>
+          <span class="skill-tag">SMS &amp; RCS</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">ORM</span>
+          <span class="skill-tag">ASO</span>
+        </div>
+      </div>
+      <div class="skill-category-card fade-in" style="transition-delay:.25s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="skill-cat-name">Soft Skills &amp; Leadership</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Management Skills</span>
+          <span class="skill-tag">Creative Thinking</span>
+          <span class="skill-tag">Strategic Planning</span>
+          <span class="skill-tag">Negotiation</span>
+          <span class="skill-tag">Critical Thinking</span>
+          <span class="skill-tag">Data-Driven Decisions</span>
+          <span class="skill-tag">Team Coordination</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Campaign Case Studies</h2>
+      <p class="section-desc">Real campaigns. Real results. A snapshot of high-impact work delivered across brands and geographies.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cs-grid">
+
+      <div class="cs-card fade-in">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800" alt="Brigade Group" loading="lazy" />
+          <span class="cs-category">Performance</span>
+        </div>
+        <div class="cs-body">
+          <div class="cs-client">Brigade Group</div>
+          <h3 class="cs-title">Multi-Project Luxury Performance Marketing</h3>
+          <p class="cs-desc">High-ticket luxury real estate campaigns across Google Search, Meta Ads, and Taboola targeting premium buyers and NRIs.</p>
+          <div class="cs-metrics">
+            <div class="cs-metric"><div class="cs-metric-val">&#8377;1.5 Cr+</div><div class="cs-metric-key">Ad Spend (6 Months)</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">10,000+</div><div class="cs-metric-key">Leads Generated</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">7.5% CTR</div><div class="cs-metric-key">Click-Through Rate</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">22x</div><div class="cs-metric-key">Sales Pipeline ROI</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card fade-in" style="transition-delay:.08s">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=800" alt="Shapoorji Pallonji" loading="lazy" />
+          <span class="cs-category">Performance</span>
+        </div>
+        <div class="cs-body">
+          <div class="cs-client">Shapoorji Pallonji</div>
+          <h3 class="cs-title">Premium Real Estate Lead Optimization</h3>
+          <p class="cs-desc">Accelerated Parkwest 2.0 premium residential launch targeting high-intent purchasers globally via programmatic and social ads.</p>
+          <div class="cs-metrics">
+            <div class="cs-metric"><div class="cs-metric-val">&#8377;1.2 Cr+</div><div class="cs-metric-key">Ad Spend (6 Months)</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">7,000+</div><div class="cs-metric-key">Leads Generated</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">&#8377;1,500</div><div class="cs-metric-key">Avg. CPL</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">18x</div><div class="cs-metric-key">Pipeline Revenue</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card fade-in" style="transition-delay:.16s">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Rustomjee" loading="lazy" />
+          <span class="cs-category">Performance</span>
+        </div>
+        <div class="cs-body">
+          <div class="cs-client">Rustomjee Group</div>
+          <h3 class="cs-title">Massive 360&#176; Lead Harvesting</h3>
+          <p class="cs-desc">Omni-channel programmatic campaign across Google, Meta, Taboola, TOI Directs, and Yahoo Native for premium suburban townships.</p>
+          <div class="cs-metrics">
+            <div class="cs-metric"><div class="cs-metric-val">&#8377;3 Cr+</div><div class="cs-metric-key">Ad Spend</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">30,000+</div><div class="cs-metric-key">Total Leads</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">15% CTR</div><div class="cs-metric-key">Peak CTR</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">25x</div><div class="cs-metric-key">Projected Bookings</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card fade-in" style="transition-delay:.24s">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800" alt="NRI ONE" loading="lazy" />
+          <span class="cs-category">International</span>
+        </div>
+        <div class="cs-body">
+          <div class="cs-client">NRI ONE</div>
+          <h3 class="cs-title">International Real Estate Exhibition Campaigns</h3>
+          <p class="cs-desc">Cross-border performance campaigns for Indian Property Exhibitions in Dubai, Singapore, and Bahrain.</p>
+          <div class="cs-metrics">
+            <div class="cs-metric"><div class="cs-metric-val">&#8377;50L+</div><div class="cs-metric-key">Ad Spend (5 Months)</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">2,000+</div><div class="cs-metric-key">Leads Generated</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">35%</div><div class="cs-metric-key">Quality Lead Rate</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">Sold Out</div><div class="cs-metric-key">Exhibition Result</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card fade-in" style="transition-delay:.32s">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Emaar Dubai" loading="lazy" />
+          <span class="cs-category">International</span>
+        </div>
+        <div class="cs-body">
+          <div class="cs-client">Emaar Dubai</div>
+          <h3 class="cs-title">High-Budget International Villa Launch</h3>
+          <p class="cs-desc">Premium digital acquisitions targeting GCC and Dubai luxury seekers for suburban gated communities via Meta and Google PMax.</p>
+          <div class="cs-metrics">
+            <div class="cs-metric"><div class="cs-metric-val">&#8377;10L+</div><div class="cs-metric-key">Ad Spend (2 Months)</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">500+</div><div class="cs-metric-key">Leads Generated</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">12% CTR</div><div class="cs-metric-key">Click-Through Rate</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">8 Closed</div><div class="cs-metric-key">Premium Sales</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-card fade-in" style="transition-delay:.4s">
+        <div class="cs-img">
+          <img src="https://images.unsplash.com/photo-1530026405186-ed1ea46073e5?auto=format&fit=crop&q=80&w=800" alt="Dr Batra" loading="lazy" />
+          <span class="cs-category">Healthcare</span>
+        </div>
+        <div class="cs-body">
+          <div class="cs-client">Dr. Batra's</div>
+          <h3 class="cs-title">Healthcare Leads Campaign Optimization</h3>
+          <p class="cs-desc">High-volume lead capture funnels for premium homeopathy consulting appointments across national and regional zones.</p>
+          <div class="cs-metrics">
+            <div class="cs-metric"><div class="cs-metric-val">&#8377;5L+/mo</div><div class="cs-metric-key">Monthly Budget</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">300+/mo</div><div class="cs-metric-key">Qualified Leads</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">40%</div><div class="cs-metric-key">Quality Lead Rate</div></div>
+            <div class="cs-metric"><div class="cs-metric-val">15% CTR</div><div class="cs-metric-key">Peak CTR</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PERFORMANCE CHART -->
+<section id="performance">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Data &amp; Analytics</div>
+      <h2 class="section-title">Campaign Performance Dashboard</h2>
+      <p class="section-desc">Comparative view of leads generated vs. ad spend across major brands managed.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="chart-wrapper fade-in">
+      <canvas id="performanceChart" height="90"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Recognition</div>
+      <h2 class="section-title">Achievements</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card fade-in">
+        <div class="ach-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="ach-body">
+          <h4>IIDE Launchpad 2020 Winner</h4>
+          <div class="ach-sub">Startup Idea Competition</div>
+          <p>Created a comprehensive startup business model, built the financial forecast, and presented the pitch model to venture capital investors.</p>
+        </div>
+      </div>
+      <div class="ach-card fade-in" style="transition-delay:.1s">
+        <div class="ach-icon"><i class="fa-solid fa-music"></i></div>
+        <div class="ach-body">
+          <h4>Music in TV Ad &ndash; Swaad Pachak</h4>
+          <div class="ach-sub">Nationwide TV Commercial</div>
+          <p>Remade a popular promotional jingle in 2017 and created professional audio scores for multiple narrative short films for the brand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Academic Background</div>
+      <h2 class="section-title">Education</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card fade-in">
+        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="edu-body">
+          <h4>Online MBA</h4>
+          <div class="edu-inst">NMIMS</div>
+          <div class="edu-year">2025 &ndash; Present</div>
+        </div>
+      </div>
+      <div class="edu-card fade-in" style="transition-delay:.08s">
+        <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div class="edu-body">
+          <h4>Certified Digital Marketer</h4>
+          <div class="edu-inst">Indian Institute of Digital Education (IIDE)</div>
+          <div class="edu-year">2019 &ndash; 2020</div>
+        </div>
+      </div>
+      <div class="edu-card fade-in" style="transition-delay:.16s">
+        <div class="edu-icon"><i class="fa-solid fa-book"></i></div>
+        <div class="edu-body">
+          <h4>Bachelors in Management Studies &ndash; Marketing</h4>
+          <div class="edu-inst">R.D. National College</div>
+          <div class="edu-year">2016 &ndash; 2019</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IIDE PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Academic Projects</div>
+      <h2 class="section-title">IIDE Projects</h2>
+      <p class="section-desc">Real-brand digital marketing projects completed during certification at IIDE.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card fade-in"><div class="client-tag">Practo</div><h4>Brand Analysis &amp; 360&#176; Digital Audit</h4></div>
+      <div class="project-card fade-in" style="transition-delay:.05s"><div class="client-tag">Practo</div><h4>Website Planning &amp; Structural Audit</h4></div>
+      <div class="project-card fade-in" style="transition-delay:.1s"><div class="client-tag">Swiggy</div><h4>Online Reputation Management (ORM) Audit</h4></div>
+      <div class="project-card fade-in" style="transition-delay:.15s"><div class="client-tag">Rentomojo</div><h4>SMM &amp; Media Planning Campaign</h4></div>
+      <div class="project-card fade-in" style="transition-delay:.2s"><div class="client-tag">Practo</div><h4>Content Strategy Creation</h4></div>
+      <div class="project-card fade-in" style="transition-delay:.25s"><div class="client-tag">Pocket App</div><h4>Mobile Marketing &amp; ASO</h4></div>
+      <div class="project-card fade-in" style="transition-delay:.3s"><div class="client-tag">Piramal Realty</div><h4>SEO &amp; SEM Analysis</h4></div>
+      <div class="project-card fade-in" style="transition-delay:.35s"><div class="client-tag">Yatra.com</div><h4>360&#176; Comprehensive Marketing Strategy</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Ready to Drive Results Together?</h2>
+    <p class="section-desc">Available for immediate joining. Let's talk about how I can grow your brand digitally.</p>
+    <div class="contact-cards">
+      <a href="mailto:sawantmayuresh3@gmail.com" class="contact-card">
+        <i class="fa-solid fa-envelope"></i>
+        <span>sawantmayuresh3@gmail.com</span>
+      </a>
+      <a href="tel:+919869078800" class="contact-card">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 9869078800</span>
+      </a>
+      <a href="https://linkedin.com/in/mayureshsawant21/" target="_blank" rel="noopener" class="contact-card">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>LinkedIn Profile</span>
+      </a>
+    </div>
+    <a href="mailto:sawantmayuresh3@gmail.com" class="btn btn-outline">
+      <i class="fa-solid fa-paper-plane"></i> Send Me a Message
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Mayuresh Sawant &middot; Digital Marketing Manager &middot; Mumbai, India &middot; <a href="https://linkedin.com/in/mayureshsawant21/" target="_blank" rel="noopener">LinkedIn</a></p>
+</footer>
+
+<script>
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile nav toggle
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Scroll-triggered fade-in
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+  // Performance Chart
+  var ctx = document.getElementById('performanceChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Brigade Group', 'Shapoorji Pallonji', 'Rustomjee', 'NRI ONE', 'Emaar Dubai', 'Paradigm Realty', "Dr. Batra's"],
+      datasets: [
+        {
+          label: 'Leads Generated',
+          data: [10500, 7200, 31200, 2200, 520, 1850, 3600],
+          backgroundColor: 'rgba(79, 70, 229, 0.75)',
+          borderColor: '#4F46E5',
+          borderWidth: 1.5,
+          borderRadius: 6,
+          yAxisID: 'y',
+        },
+        {
+          label: 'Ad Spend (₹ Lakhs)',
+          data: [150, 120, 300, 50, 10, 30, 60],
+          type: 'line',
+          borderColor: '#7C3AED',
+          backgroundColor: 'rgba(124, 58, 237, 0.08)',
+          borderWidth: 2.5,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#7C3AED',
+          pointRadius: 5,
+          yAxisID: 'y1',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top', labels: { font: { family: 'Inter', size: 12 }, color: '#334155' } },
+        tooltip: {
+          backgroundColor: '#0f172a',
+          titleFont: { family: 'Poppins', size: 13 },
+          bodyFont: { family: 'Inter', size: 12 },
+          padding: 12,
+          cornerRadius: 8,
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { family: 'Inter', size: 11 }, color: '#64748b' } },
+        y: {
+          type: 'linear', position: 'left',
+          grid: { color: '#f1f5f9' },
+          ticks: { font: { family: 'Inter', size: 11 }, color: '#64748b' },
+          title: { display: true, text: 'Leads Generated', font: { family: 'Inter', size: 11 }, color: '#4F46E5' }
+        },
+        y1: {
+          type: 'linear', position: 'right',
+          grid: { drawOnChartArea: false },
+          ticks: { font: { family: 'Inter', size: 11 }, color: '#64748b', callback: function(v) { return '₹' + v + 'L'; } },
+          title: { display: true, text: 'Ad Spend (₹ Lakhs)', font: { family: 'Inter', size: 11 }, color: '#7C3AED' }
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
