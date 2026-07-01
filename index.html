@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mayuresh Sawant | Digital Marketing Expert — Mumbai</title>
-  <meta name="description" content="Performance Marketing Expert. I turn ad budgets into qualified leads and revenue for Real Estate, Healthcare &amp; International brands."/>
+  <title>Mayuresh Sawant | Digital Marketing Manager — Mumbai</title>
+  <meta name="description" content="Digital Marketing Manager specializing in performance campaigns. I turn ad budgets into qualified leads and revenue for Real Estate, Healthcare &amp; International brands."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -63,6 +63,10 @@
 
     /* ── HERO ── */
     #hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:linear-gradient(150deg,#fff 0%,#EEF2FF 55%,#F5F3FF 100%);position:relative;overflow:hidden}
+    /* Marketing texture bg */
+    .hero-bg-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
+    .hero-float-icon{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:14px;animation:floatIcon linear infinite alternate}
+    @keyframes floatIcon{0%{transform:translateY(0) rotate(var(--rot,0deg))}100%{transform:translateY(-18px) rotate(var(--rot,0deg))}}
     .hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
     .hero-kicker{display:inline-flex;align-items:center;gap:.5rem;background:#EEF2FF;border:1px solid #C7D2FE;color:var(--p);border-radius:50px;padding:.4rem 1.1rem;font-size:.8rem;font-weight:700;margin-bottom:1.5rem;animation:fadeDown .6s both}
     .hero-title{font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:900;line-height:1.1;color:var(--dark);margin-bottom:1.1rem;animation:fadeUp .6s .1s both}
@@ -191,9 +195,19 @@
     .plat-label{text-align:center;margin-bottom:1.5rem}
     .plat-label .pill{margin-bottom:0}
     .belt-row{margin-bottom:.75rem}
+    /* Override brand-chip for white-bg platform section */
+    #platforms .brand-chip{color:var(--mid)!important;border-color:var(--border)!important;background:#f8fafc}
+    #platforms .brand-chip i{color:var(--p)}
+    #platforms .brand-chip:hover{color:var(--p)!important;border-color:#C7D2FE!important;background:#EEF2FF}
+    /* Platform marquee fades use white bg */
+    #platforms .marquee-wrap::before{background:linear-gradient(to right,#fff,transparent)}
+    #platforms .marquee-wrap::after{background:linear-gradient(to left,#fff,transparent)}
 
     /* ── IIDE PROJECTS ── */
     #projects{background:var(--soft);overflow:hidden}
+    /* Fix edge fades to match soft background */
+    #projects .marquee-wrap::before{background:linear-gradient(to right,var(--soft),transparent)}
+    #projects .marquee-wrap::after{background:linear-gradient(to left,var(--soft),transparent)}
     .iide-belt{margin-top:2rem}
     .iide-chip{display:inline-flex;align-items:center;gap:.7rem;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:.75rem 1.25rem;margin:0 .5rem;box-shadow:var(--sh);transition:all .25s;text-decoration:none}
     .iide-chip:hover{box-shadow:var(--shl);border-color:#C7D2FE;transform:translateY(-2px)}
@@ -297,8 +311,54 @@
 
 <!-- HERO -->
 <section id="hero">
+  <!-- Marketing texture background -->
+  <svg class="hero-bg-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Subtle dot grid -->
+    <defs>
+      <pattern id="dotgrid" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1.2" fill="rgba(99,102,241,0.09)"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dotgrid)"/>
+    <!-- Faint chart line 1 -->
+    <polyline points="0,520 120,430 260,470 380,360 500,390 640,280 780,310 900,200 1040,240 1200,140" fill="none" stroke="rgba(99,102,241,0.07)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Faint chart line 2 -->
+    <polyline points="0,620 140,580 300,540 440,560 580,480 700,500 840,420 980,440 1100,370 1280,320" fill="none" stroke="rgba(124,58,237,0.06)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Upward trend arrow (large, top right) -->
+    <g opacity="0.045" transform="translate(72%,8%) rotate(-12)">
+      <polyline points="0,120 60,80 120,90 200,30 280,50 360,0" fill="none" stroke="#4F46E5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="360,0 340,18 356,20" fill="#4F46E5"/>
+    </g>
+    <!-- Decorative ring -->
+    <circle cx="88%" cy="75%" r="120" fill="none" stroke="rgba(99,102,241,0.06)" stroke-width="28"/>
+    <circle cx="88%" cy="75%" r="70" fill="none" stroke="rgba(124,58,237,0.05)" stroke-width="16"/>
+    <!-- Small bar chart silhouette -->
+    <g opacity="0.055" transform="translate(6%,72%)">
+      <rect x="0" y="60" width="18" height="40" rx="4" fill="#4F46E5"/>
+      <rect x="26" y="30" width="18" height="70" rx="4" fill="#6366f1"/>
+      <rect x="52" y="10" width="18" height="90" rx="4" fill="#7C3AED"/>
+      <rect x="78" y="40" width="18" height="60" rx="4" fill="#818cf8"/>
+    </g>
+    <!-- Faint megaphone outline -->
+    <g opacity="0.04" transform="translate(55%,70%) scale(1.4)">
+      <path d="M10,20 L40,8 L40,42 L10,30 Z" fill="#4F46E5"/>
+      <rect x="-2" y="20" width="12" height="10" rx="3" fill="#6366f1"/>
+      <path d="M40,18 Q58,25 40,32" fill="none" stroke="#7C3AED" stroke-width="3"/>
+      <path d="M40,12 Q68,25 40,38" fill="none" stroke="#7C3AED" stroke-width="2" opacity=".6"/>
+    </g>
+  </svg>
+
+  <!-- Floating marketing icon badges -->
+  <div class="hero-float-icon" style="top:14%;left:3%;width:48px;height:48px;background:rgba(66,133,244,.08);border:1px solid rgba(66,133,244,.18);--rot:-8deg;animation-duration:4.2s;animation-delay:0s"><i class="fa-brands fa-google" style="color:#4285F4;font-size:1.2rem"></i></div>
+  <div class="hero-float-icon" style="top:22%;left:8%;width:40px;height:40px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.16);--rot:6deg;animation-duration:5.1s;animation-delay:.8s"><i class="fa-solid fa-chart-line" style="color:#6366f1;font-size:1rem"></i></div>
+  <div class="hero-float-icon" style="top:70%;left:5%;width:44px;height:44px;background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.15);--rot:-5deg;animation-duration:3.8s;animation-delay:1.2s"><i class="fa-solid fa-bullseye" style="color:#7C3AED;font-size:1.1rem"></i></div>
+  <div class="hero-float-icon" style="top:80%;left:14%;width:36px;height:36px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.18);--rot:10deg;animation-duration:4.6s;animation-delay:.4s"><i class="fa-solid fa-arrow-trend-up" style="color:#10B981;font-size:.9rem"></i></div>
+  <div class="hero-float-icon" style="top:10%;right:38%;width:40px;height:40px;background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.16);--rot:-4deg;animation-duration:5.5s;animation-delay:1.8s"><i class="fa-solid fa-dollar-sign" style="color:#F59E0B;font-size:1rem"></i></div>
+  <div class="hero-float-icon" style="top:60%;left:28%;width:38px;height:38px;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.15);--rot:7deg;animation-duration:4s;animation-delay:2.2s"><i class="fa-brands fa-meta" style="color:#3B82F6;font-size:1rem"></i></div>
+  <div class="hero-float-icon" style="bottom:12%;left:38%;width:36px;height:36px;background:rgba(234,67,53,.07);border:1px solid rgba(234,67,53,.15);--rot:-9deg;animation-duration:3.5s;animation-delay:.6s"><i class="fa-brands fa-youtube" style="color:#EA4335;font-size:1rem"></i></div>
+
   <div class="hero-inner">
-    <div class="hero-kicker"><i class="fa-solid fa-bolt"></i> Performance Marketing Expert &mdash; Mumbai</div>
+    <div class="hero-kicker"><i class="fa-solid fa-bolt"></i> Digital Marketing Manager &mdash; Mumbai</div>
     <h1 class="hero-title">
       I Turn Ad Budgets Into<br/>
       <span class="grad">Qualified Leads &amp; Revenue</span>
